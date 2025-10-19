@@ -1,0 +1,250 @@
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Diwali Anjali 🎆🐼</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      text-align: center;
+      background: #000;
+    }
+
+    /* Panda video background */
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.7) blur(1px);
+    }
+
+    /* Floating diyas */
+    .diya {
+      position: absolute;
+      bottom: -50px;
+      width: 60px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+      to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Fireworks animation */
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(circle, #fff, transparent);
+      border-radius: 50%;
+      animation: explode 1.2s ease-out infinite;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(0.2); opacity: 1; }
+      100% { transform: scale(3); opacity: 0; }
+    }
+
+    /* Sparkling particles */
+    .sparkle {
+      position: absolute;
+      background: #ff0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      animation: sparkleMove 3s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes sparkleMove {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .container {
+      animation: fadeIn 2s ease;
+      z-index: 2;
+      position: relative;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: glow 2s infinite alternate;
+      text-shadow: 0 0 20px #ff6, 0 0 40px #f0f;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff8c00, 0 0 20px #ff0080; }
+      to { text-shadow: 0 0 20px #ff1493, 0 0 40px #ffff00; }
+    }
+
+    .emoji {
+      position: absolute;
+      top: 20px;
+      font-size: 2.5em;
+      animation: bounce 1.5s infinite alternate;
+    }
+
+    .emoji.right { right: 20px; }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-15px); }
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      border: none;
+      padding: 15px 40px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 30px;
+      margin: 20px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.5s, box-shadow 0.3s;
+      box-shadow: 0 0 15px #ff00cc;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #ff9900, #ff0066);
+      box-shadow: 0 0 25px #ff9900;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: #ff66b2;
+      font-size: 24px;
+      animation: flyHearts 4s ease-in-out infinite;
+      opacity: 0.8;
+      z-index: 2;
+    }
+
+    @keyframes flyHearts {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Panda background video -->
+  <video autoplay loop muted>
+    <source src="https://cdn.pixabay.com/vimeo/283941746/panda-17910.mp4?width=640&hash=8db4e8de2dbe8783035422e0158ab97c2bda6a6f" type="video/mp4">
+  </video>
+
+  <div class="container" id="page1">
+    <h1>🎆 Happy Diwali Anjali 🎆</h1>
+    <div class="emoji right">😍</div>
+    <button onclick="noClicked1()">No</button>
+    <button onclick="yesClicked1()">Yes</button>
+  </div>
+
+  <div class="container" id="page2" style="display:none;">
+    <h1>Do you want to wish me Happy Diwali? 🎇</h1>
+    <button onclick="noClicked2()">No</button>
+    <button onclick="yesClicked2()">Yes</button>
+  </div>
+
+  <div class="container" id="page3" style="display:none;">
+    <h1 style="font-size:2.5em;">💖 Thank you so much! 😍💖<br>Wish you a joyful and sparkling Diwali, Anjali ji! 🪔🐼💫<br>You are my favourite! 💖💖</h1>
+  </div>
+
+  <script>
+    function noClicked1() {
+      alert("Please choose Yes 🥺✨");
+    }
+
+    function yesClicked1() {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+
+    function noClicked2() {
+      document.querySelector("#page2 h1").innerHTML = "😢 Please say Yes... 🥺";
+    }
+
+    function yesClicked2() {
+      document.getElementById("page2").style.display = "none";
+      document.getElementById("page3").style.display = "block";
+      spawnHearts();
+    }
+
+    // Floating diyas
+    for (let i = 0; i < 6; i++) {
+      const diya = document.createElement('img');
+      diya.src = 'https://cdn-icons-png.flaticon.com/512/9794/9794923.png';
+      diya.className = 'diya';
+      diya.style.left = Math.random() * 100 + 'vw';
+      diya.style.animationDelay = (Math.random() * 5) + 's';
+      diya.style.width = (40 + Math.random() * 40) + 'px';
+      document.body.appendChild(diya);
+    }
+
+    // Fireworks
+    setInterval(() => {
+      const firework = document.createElement('div');
+      firework.className = 'firework';
+      firework.style.left = Math.random() * 100 + 'vw';
+      firework.style.top = Math.random() * 100 + 'vh';
+      firework.style.background = `radial-gradient(circle, hsl(${Math.random()*360},100%,60%), transparent)`;
+      document.body.appendChild(firework);
+      setTimeout(() => firework.remove(), 1200);
+    }, 600);
+
+    // Sparkles
+    setInterval(() => {
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = '100vh';
+      s.style.background = ['#ff0','#fff','#ff69b4','#ffa500'][Math.floor(Math.random()*4)];
+      s.style.animationDuration = (2 + Math.random() * 2) + 's';
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 4000);
+    }, 200);
+
+    // Hearts
+    function spawnHearts() {
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '💖';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (2 + Math.random() * 3) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }, 400);
+    }
+  </script>
+</body>
+</html>
